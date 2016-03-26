@@ -26,7 +26,7 @@ function main() {
   // start processing...
   const apiKey = options.apiKey;
   const origins = locations.randomSample(options.samples, options.range);
-  const destinations = [options.destination];
+  const destinations = [options.destinatioRn];
   distanceApi.query(origins, destinations, apiKey, function (error, data) {
     if (error) {
       console.log(error);
