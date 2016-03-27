@@ -3,7 +3,7 @@
 This software creates a list of travel information from random locations to a certain destination. Requirements are specified in a json file:
 
     {
-      "apiKey": "AIzaSyAVTCPnWDqdEcQSBoz3r2kWsCJH_1upFEw",
+      "apiKey": "API_KEY",
       "samples": 40,
       "file": "marienplatz.csv",
       "destination": {
