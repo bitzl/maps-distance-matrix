@@ -1,3 +1,23 @@
-# Starter Project for Node.js
+# Distance Matrix
 
-For any new project, change at least metadata in `package.json`.
+This software creates a list of travel information from random locations to a certain destination. Requirements are specified in a json file:
+
+    {
+      "apiKey": "AIzaSyAVTCPnWDqdEcQSBoz3r2kWsCJH_1upFEw",
+      "samples": 40,
+      "file": "marienplatz.csv",
+      "destination": {
+        "latitude": 48.137493,
+        "longitude": 11.575363
+      },
+      "range": {
+        "latitude": [47.637493, 48.637493],
+        "longitude": [11.075363, 12.075363]
+      }
+    }
+
+To query new data, run
+
+    node index.js <config>
+
+If the out file exists, new data will be appended.

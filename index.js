@@ -17,19 +17,20 @@ function main() {
   //   // .option('-k, --apikey <key>', 'The Google Distance API key.')
   //   .parse(process.argv);
   //
-  // if (process.argv.length < 3) {
-  //   commander.help();
-  // }
+  if (process.argv.length !== 3) {
+    console.log('Usage: node index.js <config>');
+    process.exit(1);
+  }
 
-  const options = config.load('job.json');
+  const options = config.load(process.argv[2]);
 
   // start processing...
   const apiKey = options.apiKey;
   const origins = locations.randomSample(options.samples, options.range);
-  const destinations = [options.destinatioRn];
+  const destinations = [options.destination];
   distanceApi.query(origins, destinations, apiKey, function (error, data) {
     if (error) {
-      console.log(error);
+      console.log('Error:', error);
       return;
     }
     repository.save(options.file, origins, data);
