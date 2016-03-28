@@ -21,3 +21,5 @@ To query new data, run
     node index.js <config>
 
 If the out file exists, new data will be appended.
+
+Please note that a larger sample size only reduces the number of requested API-calls to get the same number of samples. It does not help to get more data for the same quota (that is, 10 calls with sample size 1 count the same as 1 call with sample size 10).
